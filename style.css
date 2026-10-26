@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Times New Roman';
+    background: #f5f6f8;
+    color: #333;
+}
+
+.calendar {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid #ddd;
+}
+
+.calendar-header {
+    min-height: 50px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.calendar-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.controls {
+    display: flex;
+    gap: 4px;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: white;
+    padding: 7px 12px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+button:hover {
+    background: #9b9b9b;
+}
+
+#todayBtn {
+    background: #8999a8;
+    color: white;
+    border-color: #8999a8;
+}
+
+.view-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    padding: 8px;
+    border-top: 1px solid #eee;
+}
+
+.view-controls .active {
+    background: #34495e;
+    color: white;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    background: #dcdbdb;
+}
+
+.weekdays div {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 2px;
+    border: 1px solid #eee;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.day {
+    min-width: 0;
+    height: 120px;
+    padding: 6px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    overflow-y: auto;
+    background: white;
+}
+
+.day:hover {
+    background: #f8f9fc;
+}
+
+.day-number {
+    text-align: right;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.other-month .day-number {
+    color: #bbb;
+}
+
+.today {
+    background: #fcf7d8;
+}
+
+.event {
+    padding: 5px;
+    margin: 4px 0;
+    background: #d5c4e1;
+    color: #352447;
+    border-radius: 3px;
+    font-size: 22px;
+    overflow-wrap: anywhere;
+}
+
+dialog {
+    width: min(400px, calc(100% - 30px));
+    border: none;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 5px 25px #0003;
+}
+
+dialog::backdrop {
+    background: #0006;
+}
+
+dialog h2 {
+    margin-top: 0;
+}
+
+#eventForm label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#eventName {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.dialog-buttons button[type="submit"] {
+    background: #6b5b95;
+    color: white;
+    border-color: #6b5b95;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 5px;
+    }
+
+    .calendar-header h1 {
+        font-size: 17px;
+    }
+
+    .day {
+        height: 100px;
+        padding: 3px;
+    }
+
+    .event {
+        font-size: 10px;
+        padding: 3px;
+    }
+
+    .weekdays div {
+        font-size: 10px;
+    }
+}

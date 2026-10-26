@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Calendar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="calendar">
+        <header class="calendar-header">
+            <h1 id="monthYear"></h1>
+
+            <div class="controls">
+                <button id="todayBtn">Today</button>
+                <button id="prevBtn" aria-label="Previous period">&lsaquo;</button>
+                <button id="nextBtn" aria-label="Next period">&rsaquo;</button>
+            </div>
+        </header>
+
+        <div class="view-controls">
+            <button id="monthViewBtn" class="active">Month</button>
+            <button id="weekViewBtn">Week</button>
+        </div>
+
+        <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+
+        <div id="calendarDays" class="calendar-days"></div>
+    </div>
+
+    <dialog id="eventDialog">
+        <form id="eventForm">
+            <h2>Add Event</h2>
+
+            <p id="selectedDate"></p>
+
+            <label for="eventName">Event Name</label>
+            <input
+                type="text"
+                id="eventName"
+                placeholder="Enter event name"
+                required
+                maxlength="100"
+            >
+
+            <div class="dialog-buttons">
+                <button type="button" id="cancelBtn">Cancel</button>
+                <button type="submit">Save Event</button>
+            </div>
+        </form>
+    </dialog>
+
+</body>
+</html>
